@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion - Portail Sécurisé</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f1f5f9;
+        }
+
+        .barre-navigation {
+            background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
+            color: white;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .conteneur-principal {
+            max-width: 1200px;
+            margin: 32px auto;
+            padding: 0 24px;
+        }
+
+        .carte {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .titre-section {
+            color: #1a472a;
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+
+        .lien-retour {
+            display: inline-block;
+            margin-top: 16px;
+            color: #2d6a4f;
+            text-decoration: none;
+        }
+
+        .bouton-deconnexion {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 6px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<nav class="barre-navigation">
+    <div>Espace Gestion</div>
+    <div>
+        <span th:text="${utilisateurCourant}">utilisateur</span>
+        <a href="/terminer-session" class="bouton-deconnexion">Déconnexion</a>
+    </div>
+</nav>
+
+<div class="conteneur-principal">
+    <div class="carte">
+        <h1 class="titre-section">Tableau de bord Gestionnaire</h1>
+        <p>Bienvenue dans l'espace de gestion. Cette zone est accessible aux gestionnaires et administrateurs.</p>
+        <p>Fonctionnalités disponibles :</p>
+        <ul style="margin: 16px 0 0 24px;">
+            <li>Suivi des opérations quotidiennes</li>
+            <li>Génération de rapports d'activité</li>
+            <li>Consultation des indicateurs de performance</li>
+            <li>Gestion des ressources</li>
+        </ul>
+        <a href="/accueil" class="lien-retour">← Retour à l'accueil</a>
+    </div>
+</div>
+</body>
+</html>
